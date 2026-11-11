@@ -1,0 +1,291 @@
+{
+  "label": "Lantern Hill Records",
+  "publisher": "Lantern Hill Music",
+  "home_territory": "US",
+  "note": "All terms, rates and fees are illustrative. They are not real statutory rates or any real company's terms.",
+  "statement_periods": [
+    "2025Q3",
+    "2025Q4",
+    "2026Q1",
+    "2026Q2"
+  ],
+  "fx_usd_per_unit": {
+    "2025-07": {
+      "USD": "1",
+      "EUR": "1.0831",
+      "GBP": "1.2727",
+      "SEK": "0.0965",
+      "JPY": "0.006692",
+      "BRL": "0.1821",
+      "MXN": "0.0547",
+      "CAD": "0.7267",
+      "AUD": "0.6603"
+    },
+    "2025-08": {
+      "USD": "1",
+      "EUR": "1.0882",
+      "GBP": "1.2862",
+      "SEK": "0.0950",
+      "JPY": "0.006644",
+      "BRL": "0.1794",
+      "MXN": "0.0553",
+      "CAD": "0.7317",
+      "AUD": "0.6494"
+    },
+    "2025-09": {
+      "USD": "1",
+      "EUR": "1.1071",
+      "GBP": "1.3077",
+      "SEK": "0.0956",
+      "JPY": "0.006672",
+      "BRL": "0.1772",
+      "MXN": "0.0543",
+      "CAD": "0.7325",
+      "AUD": "0.6391"
+    },
+    "2025-10": {
+      "USD": "1",
+      "EUR": "1.0947",
+      "GBP": "1.2955",
+      "SEK": "0.0940",
+      "JPY": "0.006663",
+      "BRL": "0.1768",
+      "MXN": "0.0550",
+      "CAD": "0.7330",
+      "AUD": "0.6423"
+    },
+    "2025-11": {
+      "USD": "1",
+      "EUR": "1.0947",
+      "GBP": "1.3031",
+      "SEK": "0.0938",
+      "JPY": "0.006610",
+      "BRL": "0.1799",
+      "MXN": "0.0560",
+      "CAD": "0.7419",
+      "AUD": "0.6471"
+    },
+    "2025-12": {
+      "USD": "1",
+      "EUR": "1.0875",
+      "GBP": "1.2904",
+      "SEK": "0.0931",
+      "JPY": "0.006508",
+      "BRL": "0.1817",
+      "MXN": "0.0558",
+      "CAD": "0.7512",
+      "AUD": "0.6445"
+    },
+    "2026-01": {
+      "USD": "1",
+      "EUR": "1.1054",
+      "GBP": "1.3066",
+      "SEK": "0.0914",
+      "JPY": "0.006440",
+      "BRL": "0.1844",
+      "MXN": "0.0557",
+      "CAD": "0.7642",
+      "AUD": "0.6421"
+    },
+    "2026-02": {
+      "USD": "1",
+      "EUR": "1.0884",
+      "GBP": "1.3126",
+      "SEK": "0.0923",
+      "JPY": "0.006386",
+      "BRL": "0.1816",
+      "MXN": "0.0554",
+      "CAD": "0.7770",
+      "AUD": "0.6481"
+    },
+    "2026-03": {
+      "USD": "1",
+      "EUR": "1.0734",
+      "GBP": "1.3007",
+      "SEK": "0.0910",
+      "JPY": "0.006285",
+      "BRL": "0.1836",
+      "MXN": "0.0547",
+      "CAD": "0.7786",
+      "AUD": "0.6468"
+    },
+    "2026-04": {
+      "USD": "1",
+      "EUR": "1.0615",
+      "GBP": "1.3115",
+      "SEK": "0.0898",
+      "JPY": "0.006318",
+      "BRL": "0.1810",
+      "MXN": "0.0546",
+      "CAD": "0.7706",
+      "AUD": "0.6415"
+    },
+    "2026-05": {
+      "USD": "1",
+      "EUR": "1.0795",
+      "GBP": "1.3258",
+      "SEK": "0.0892",
+      "JPY": "0.006405",
+      "BRL": "0.1791",
+      "MXN": "0.0544",
+      "CAD": "0.7804",
+      "AUD": "0.6448"
+    },
+    "2026-06": {
+      "USD": "1",
+      "EUR": "1.0639",
+      "GBP": "1.3492",
+      "SEK": "0.0882",
+      "JPY": "0.006350",
+      "BRL": "0.1809",
+      "MXN": "0.0540",
+      "CAD": "0.7747",
+      "AUD": "0.6349"
+    }
+  },
+  "stores": {
+    "wavelet": {
+      "name": "Wavelet",
+      "format": "wavelet_csv",
+      "distribution_fee_bps": 1200
+    },
+    "tidepool": {
+      "name": "Tidepool Music",
+      "format": "tidepool_semicolon",
+      "distribution_fee_bps": 1200
+    },
+    "kestrel": {
+      "name": "Kestrel Downloads",
+      "format": "kestrel_tsv",
+      "distribution_fee_bps": 1500
+    },
+    "pressing": {
+      "name": "Pressing Plant Distribution",
+      "format": "pressing_physical",
+      "distribution_fee_bps": 2500
+    },
+    "northbridge": {
+      "name": "Northbridge Rights Society",
+      "format": "society_csv",
+      "distribution_fee_bps": 0
+    }
+  },
+  "territories": {
+    "US": {
+      "currency": "USD",
+      "home": true,
+      "withholding_bps": 0,
+      "download_mech": {
+        "per_unit_micros": 120000
+      }
+    },
+    "CA": {
+      "currency": "CAD",
+      "home": false,
+      "withholding_bps": 0,
+      "download_mech": {
+        "per_unit_micros": 102000
+      }
+    },
+    "GB": {
+      "currency": "GBP",
+      "home": false,
+      "withholding_bps": 0,
+      "download_mech": {
+        "pct_bps": 800
+      }
+    },
+    "DE": {
+      "currency": "EUR",
+      "home": false,
+      "withholding_bps": 1500,
+      "download_mech": {
+        "pct_bps": 900
+      }
+    },
+    "FR": {
+      "currency": "EUR",
+      "home": false,
+      "withholding_bps": 1500,
+      "download_mech": {
+        "pct_bps": 900
+      }
+    },
+    "NL": {
+      "currency": "EUR",
+      "home": false,
+      "withholding_bps": 1000,
+      "download_mech": {
+        "pct_bps": 900
+      }
+    },
+    "SE": {
+      "currency": "SEK",
+      "home": false,
+      "withholding_bps": 1000,
+      "download_mech": {
+        "pct_bps": 900
+      }
+    },
+    "JP": {
+      "currency": "JPY",
+      "home": false,
+      "withholding_bps": 1000,
+      "download_mech": {
+        "pct_bps": 700
+      }
+    },
+    "BR": {
+      "currency": "BRL",
+      "home": false,
+      "withholding_bps": 1500,
+      "download_mech": {
+        "pct_bps": 600
+      }
+    },
+    "MX": {
+      "currency": "MXN",
+      "home": false,
+      "withholding_bps": 1000,
+      "download_mech": {
+        "pct_bps": 600
+      }
+    },
+    "AU": {
+      "currency": "AUD",
+      "home": false,
+      "withholding_bps": 1000,
+      "download_mech": {
+        "pct_bps": 850
+      }
+    }
+  },
+  "foreign_rate_factor_bps": 8500,
+  "physical_mech_per_track_micros": 120000,
+  "writer_deals": {
+    "traditional": {
+      "mech_bps": 5000,
+      "perf_bps": 0
+    },
+    "copub": {
+      "mech_bps": 7500,
+      "perf_bps": 5000
+    },
+    "admin": {
+      "mech_bps": 8500,
+      "perf_bps": 8500
+    }
+  },
+  "recoupable_pct_bps": {
+    "advance": 10000,
+    "recording": 10000,
+    "video": 5000,
+    "tour_support": 10000
+  },
+  "min_payment_cents": {
+    "artist": 10000,
+    "producer": 2500,
+    "writer": 5000,
+    "publisher": 2500
+  }
+}
