@@ -1,0 +1,1106 @@
+{
+ "artists": 60,
+ "by_kind": {
+  "fees": 5829966,
+  "label": 23996880,
+  "payees": 12962437,
+  "publisher": 2989393,
+  "suspense": 393696,
+  "tax": 203623
+ },
+ "period": "2026Q2",
+ "received_cents": 46375995,
+ "seed": 7,
+ "statements": {
+  "A001": {
+   "closing_total": -16387472,
+   "digest": "46f7920c0a647957",
+   "payable": 0
+  },
+  "A002": {
+   "closing_total": -2219147,
+   "digest": "51e06daf4e295a42",
+   "payable": 0
+  },
+  "A003": {
+   "closing_total": 890653,
+   "digest": "39bb9cc58978f637",
+   "payable": 890653
+  },
+  "A004": {
+   "closing_total": 383011,
+   "digest": "81cfe0e8146916b8",
+   "payable": 383011
+  },
+  "A005": {
+   "closing_total": 83504,
+   "digest": "1be553a1c596ec1b",
+   "payable": 83504
+  },
+  "A006": {
+   "closing_total": -1405754,
+   "digest": "6614d4f98c53452f",
+   "payable": 0
+  },
+  "A007": {
+   "closing_total": 86228,
+   "digest": "813c988a994971b0",
+   "payable": 86228
+  },
+  "A008": {
+   "closing_total": 215229,
+   "digest": "f93c033d07d477fd",
+   "payable": 305825
+  },
+  "A009": {
+   "closing_total": -2023179,
+   "digest": "7a058b393312ef97",
+   "payable": 0
+  },
+  "A010": {
+   "closing_total": -70655,
+   "digest": "d5b449128d94bef0",
+   "payable": 0
+  },
+  "A011": {
+   "closing_total": -996012,
+   "digest": "6601746b3cdc1bcb",
+   "payable": 0
+  },
+  "A012": {
+   "closing_total": -3351333,
+   "digest": "636252f1b665207d",
+   "payable": 0
+  },
+  "A013": {
+   "closing_total": -2198014,
+   "digest": "71858c8ed2823485",
+   "payable": 0
+  },
+  "A014": {
+   "closing_total": 373253,
+   "digest": "fd042b90d7ecb2af",
+   "payable": 373253
+  },
+  "A015": {
+   "closing_total": -2211416,
+   "digest": "d384dfcd0af89229",
+   "payable": 0
+  },
+  "A016": {
+   "closing_total": -669382,
+   "digest": "56e78e021ea7cbba",
+   "payable": 254528
+  },
+  "A017": {
+   "closing_total": -2597265,
+   "digest": "e7a3014c5617c4cd",
+   "payable": 0
+  },
+  "A018": {
+   "closing_total": -2249578,
+   "digest": "378eac3c64973f16",
+   "payable": 0
+  },
+  "A019": {
+   "closing_total": -2312651,
+   "digest": "aa370673a2d21e67",
+   "payable": 0
+  },
+  "A020": {
+   "closing_total": -2121082,
+   "digest": "7b850338efd75a00",
+   "payable": 0
+  },
+  "A021": {
+   "closing_total": -3884157,
+   "digest": "78c09789b0dfb70e",
+   "payable": 0
+  },
+  "A022": {
+   "closing_total": -587553,
+   "digest": "a7a7413688ac2d22",
+   "payable": 0
+  },
+  "A023": {
+   "closing_total": -911303,
+   "digest": "9ee59cbc6564ce4b",
+   "payable": 0
+  },
+  "A024": {
+   "closing_total": -322017,
+   "digest": "c27a47d09c0a72aa",
+   "payable": 0
+  },
+  "A025": {
+   "closing_total": -989119,
+   "digest": "c5174c33d85660ff",
+   "payable": 0
+  },
+  "A026": {
+   "closing_total": -1446770,
+   "digest": "255c1a7de393be04",
+   "payable": 55028
+  },
+  "A027": {
+   "closing_total": -2104403,
+   "digest": "841a4502ecc046f3",
+   "payable": 0
+  },
+  "A028": {
+   "closing_total": -1716918,
+   "digest": "f23318efc8edef80",
+   "payable": 0
+  },
+  "A029": {
+   "closing_total": -2643455,
+   "digest": "31ab089bbd4e1e4f",
+   "payable": 0
+  },
+  "A030": {
+   "closing_total": -79270,
+   "digest": "2d1f72cdba9429b9",
+   "payable": 0
+  },
+  "A031": {
+   "closing_total": -2186244,
+   "digest": "22ff9f70425c1740",
+   "payable": 0
+  },
+  "A032": {
+   "closing_total": -398623,
+   "digest": "209b02e6ab2311c6",
+   "payable": 0
+  },
+  "A033": {
+   "closing_total": -1123035,
+   "digest": "1579acd38fc30f14",
+   "payable": 0
+  },
+  "A034": {
+   "closing_total": -805508,
+   "digest": "9386294856afb1c5",
+   "payable": 0
+  },
+  "A035": {
+   "closing_total": -580558,
+   "digest": "25cba21af1390caa",
+   "payable": 0
+  },
+  "A036": {
+   "closing_total": -774247,
+   "digest": "f5bb13d291f91ee9",
+   "payable": 0
+  },
+  "A037": {
+   "closing_total": -324011,
+   "digest": "9482e25f4304f6f3",
+   "payable": 0
+  },
+  "A038": {
+   "closing_total": -3151289,
+   "digest": "23cfd1fce56cd553",
+   "payable": 0
+  },
+  "A039": {
+   "closing_total": -1613601,
+   "digest": "51e4e4fbf427699b",
+   "payable": 0
+  },
+  "A040": {
+   "closing_total": -599266,
+   "digest": "055a724cf0910599",
+   "payable": 41487
+  },
+  "A041": {
+   "closing_total": -2176834,
+   "digest": "2b6318f5166531c5",
+   "payable": 0
+  },
+  "A042": {
+   "closing_total": -2329369,
+   "digest": "e5e58b97081fbef8",
+   "payable": 15417
+  },
+  "A043": {
+   "closing_total": -1227786,
+   "digest": "6b5393d7995a06a9",
+   "payable": 0
+  },
+  "A044": {
+   "closing_total": -5322,
+   "digest": "38e8d4dda1610638",
+   "payable": 0
+  },
+  "A045": {
+   "closing_total": -2650713,
+   "digest": "c32eba0239bd904b",
+   "payable": 0
+  },
+  "A046": {
+   "closing_total": -124152,
+   "digest": "af6dca4065ca411c",
+   "payable": 0
+  },
+  "A047": {
+   "closing_total": -1392318,
+   "digest": "9e9e2d2711f109d4",
+   "payable": 0
+  },
+  "A048": {
+   "closing_total": -977552,
+   "digest": "5d7e389042aa1c03",
+   "payable": 0
+  },
+  "A049": {
+   "closing_total": -2139172,
+   "digest": "5e3c99edb04c66d0",
+   "payable": 0
+  },
+  "A050": {
+   "closing_total": -1509510,
+   "digest": "85a0f08db8a8aaf0",
+   "payable": 0
+  },
+  "A051": {
+   "closing_total": -490369,
+   "digest": "dff59d4cd425bd6f",
+   "payable": 0
+  },
+  "A052": {
+   "closing_total": -907465,
+   "digest": "91ca655f7a1c1700",
+   "payable": 0
+  },
+  "A053": {
+   "closing_total": -1777935,
+   "digest": "d2be2dd276c42555",
+   "payable": 0
+  },
+  "A054": {
+   "closing_total": -1633480,
+   "digest": "689bfbd7dd2501fe",
+   "payable": 0
+  },
+  "A055": {
+   "closing_total": -3480452,
+   "digest": "2967ef1fbe4b2149",
+   "payable": 0
+  },
+  "A056": {
+   "closing_total": -1771481,
+   "digest": "9ddb82e59f60f31e",
+   "payable": 0
+  },
+  "A057": {
+   "closing_total": -1861647,
+   "digest": "a86f4e1cbfeba9d7",
+   "payable": 0
+  },
+  "A058": {
+   "closing_total": 91894,
+   "digest": "a380a01e3c8ff3c5",
+   "payable": 91894
+  },
+  "A059": {
+   "closing_total": 76744,
+   "digest": "9cfe39ed0b200e62",
+   "payable": 76744
+  },
+  "A060": {
+   "closing_total": -562576,
+   "digest": "a27a73be9f5a7e6c",
+   "payable": 0
+  },
+  "PR001": {
+   "closing_total": 52454,
+   "digest": "18a18979375f5584",
+   "payable": 52454
+  },
+  "PR002": {
+   "closing_total": 88482,
+   "digest": "e16198d226b53c79",
+   "payable": 88482
+  },
+  "PR003": {
+   "closing_total": 97917,
+   "digest": "d43e2a71361714f5",
+   "payable": 97917
+  },
+  "PR004": {
+   "closing_total": 57386,
+   "digest": "ee59e25458b70ba3",
+   "payable": 57386
+  },
+  "PR005": {
+   "closing_total": 35830,
+   "digest": "03af1ba0089647e6",
+   "payable": 35830
+  },
+  "PR006": {
+   "closing_total": 29510,
+   "digest": "484b013f6eca3b80",
+   "payable": 29510
+  },
+  "PR007": {
+   "closing_total": 24652,
+   "digest": "7da094a05efffe59",
+   "payable": 24652
+  },
+  "PR008": {
+   "closing_total": 21908,
+   "digest": "85de4995e5297dfe",
+   "payable": 21908
+  },
+  "PR009": {
+   "closing_total": 28092,
+   "digest": "a5b7dc6ab4ef2f31",
+   "payable": 28092
+  },
+  "PR010": {
+   "closing_total": 19485,
+   "digest": "8fcc9ff3d602c19e",
+   "payable": 19485
+  },
+  "PR011": {
+   "closing_total": 31616,
+   "digest": "e2eb3e4dacad4d36",
+   "payable": 31616
+  },
+  "PR012": {
+   "closing_total": 11415,
+   "digest": "2dd76c13d4239317",
+   "payable": 11415
+  },
+  "PR013": {
+   "closing_total": 19287,
+   "digest": "776aa5ec277c43a5",
+   "payable": 19287
+  },
+  "PR014": {
+   "closing_total": 30524,
+   "digest": "241993b2634a321e",
+   "payable": 30524
+  },
+  "PR015": {
+   "closing_total": 16546,
+   "digest": "9fa0232ba8ae4efe",
+   "payable": 16546
+  },
+  "PR016": {
+   "closing_total": 11388,
+   "digest": "99c270a723781755",
+   "payable": 11388
+  },
+  "PR017": {
+   "closing_total": 25007,
+   "digest": "7274736f77b690a3",
+   "payable": 25007
+  },
+  "PR018": {
+   "closing_total": 5843,
+   "digest": "66242f3d454d26ec",
+   "payable": 5843
+  },
+  "PR019": {
+   "closing_total": 6419,
+   "digest": "ae574f012344b763",
+   "payable": 6419
+  },
+  "PR020": {
+   "closing_total": 44484,
+   "digest": "a46168236b0d70bd",
+   "payable": 44484
+  },
+  "PR021": {
+   "closing_total": 8329,
+   "digest": "f801ccd91f270321",
+   "payable": 8329
+  },
+  "PR022": {
+   "closing_total": 4148,
+   "digest": "2595b3a920dca471",
+   "payable": 4148
+  },
+  "PR023": {
+   "closing_total": 3060,
+   "digest": "c173474e0177164e",
+   "payable": 3060
+  },
+  "PR024": {
+   "closing_total": 6548,
+   "digest": "b79b3bb776d4abad",
+   "payable": 6548
+  },
+  "PR025": {
+   "closing_total": 5528,
+   "digest": "e0386086767f1c5c",
+   "payable": 5528
+  },
+  "PR026": {
+   "closing_total": 2945,
+   "digest": "90f9acff6324fab7",
+   "payable": 2945
+  },
+  "PR027": {
+   "closing_total": 8434,
+   "digest": "88499cf4a8633f84",
+   "payable": 8434
+  },
+  "PR028": {
+   "closing_total": 3858,
+   "digest": "492a9c3e13506c1e",
+   "payable": 3858
+  },
+  "PR029": {
+   "closing_total": 13029,
+   "digest": "8f19498e4cc6ab0f",
+   "payable": 13029
+  },
+  "PR030": {
+   "closing_total": 4109,
+   "digest": "a0cc543acf41bd20",
+   "payable": 4109
+  },
+  "PR031": {
+   "closing_total": 3480,
+   "digest": "d506f3e145a303d5",
+   "payable": 3480
+  },
+  "PR032": {
+   "closing_total": 1370,
+   "digest": "e59c31609693d4c6",
+   "payable": 0
+  },
+  "PR033": {
+   "closing_total": 1592,
+   "digest": "3b8a62c090ea4a6c",
+   "payable": 0
+  },
+  "PR034": {
+   "closing_total": 4470,
+   "digest": "12cc43e3846aa340",
+   "payable": 4470
+  },
+  "PR035": {
+   "closing_total": 3382,
+   "digest": "eff333a0616a7c2d",
+   "payable": 3382
+  },
+  "PR036": {
+   "closing_total": 2969,
+   "digest": "fa822238b367b9e1",
+   "payable": 2969
+  },
+  "PR037": {
+   "closing_total": 2733,
+   "digest": "40e4275ed59a1874",
+   "payable": 2733
+  },
+  "PR038": {
+   "closing_total": 9508,
+   "digest": "5806d7973ce8cbf8",
+   "payable": 9508
+  },
+  "PR039": {
+   "closing_total": 6298,
+   "digest": "bd77dbfba37e6229",
+   "payable": 6298
+  },
+  "PR040": {
+   "closing_total": 4489,
+   "digest": "24d96ff23f2b45c9",
+   "payable": 4489
+  },
+  "PUB-01": {
+   "closing_total": 63117,
+   "digest": "cb0e55ccd8934349",
+   "payable": 63117
+  },
+  "PUB-02": {
+   "closing_total": 106622,
+   "digest": "da76e4e38db218e7",
+   "payable": 106622
+  },
+  "PUB-03": {
+   "closing_total": 114452,
+   "digest": "e2c2ab05ad3e16b6",
+   "payable": 114452
+  },
+  "PUB-04": {
+   "closing_total": 131651,
+   "digest": "677c08bd0d0925e1",
+   "payable": 131651
+  },
+  "PUB-05": {
+   "closing_total": 87777,
+   "digest": "9c8400988d6463b8",
+   "payable": 87777
+  },
+  "W0002": {
+   "closing_total": -719783,
+   "digest": "7cc40fe283488750",
+   "payable": 0
+  },
+  "W0005": {
+   "closing_total": 18591,
+   "digest": "199f53ac5d0e885a",
+   "payable": 18591
+  },
+  "W0007": {
+   "closing_total": 13138,
+   "digest": "e1eef1598abff414",
+   "payable": 13138
+  },
+  "W0012": {
+   "closing_total": 13658,
+   "digest": "8067cb9ee7e4a887",
+   "payable": 13658
+  },
+  "W0014": {
+   "closing_total": -128344,
+   "digest": "5271a32e6870ea33",
+   "payable": 0
+  },
+  "W0016": {
+   "closing_total": -254574,
+   "digest": "58b721f9278aa520",
+   "payable": 0
+  },
+  "W0017": {
+   "closing_total": -731440,
+   "digest": "c0bc6e3762c2ddb0",
+   "payable": 0
+  },
+  "W0019": {
+   "closing_total": -573035,
+   "digest": "4b2193a37568a5ac",
+   "payable": 0
+  },
+  "W0020": {
+   "closing_total": -272630,
+   "digest": "fb7133a9eac401f6",
+   "payable": 0
+  },
+  "W0022": {
+   "closing_total": -97641,
+   "digest": "cc50e4acd5415920",
+   "payable": 0
+  },
+  "W0023": {
+   "closing_total": 12257,
+   "digest": "3a6b71c46ef48803",
+   "payable": 12257
+  },
+  "W0024": {
+   "closing_total": 14042,
+   "digest": "e26fee76392a2844",
+   "payable": 14042
+  },
+  "W0025": {
+   "closing_total": 8260,
+   "digest": "50a2925f7846fef1",
+   "payable": 8260
+  },
+  "W0026": {
+   "closing_total": -671699,
+   "digest": "7d3eda7a5c91fc8e",
+   "payable": 0
+  },
+  "W0027": {
+   "closing_total": 22473,
+   "digest": "c6eaa5a0968a8357",
+   "payable": 22473
+  },
+  "W0029": {
+   "closing_total": 23080,
+   "digest": "2cbdc88c33dfbd6d",
+   "payable": 23080
+  },
+  "W0030": {
+   "closing_total": 125331,
+   "digest": "b093016951af250b",
+   "payable": 125331
+  },
+  "W0031": {
+   "closing_total": -20374,
+   "digest": "3b8d8fa68aee63dd",
+   "payable": 0
+  },
+  "W0032": {
+   "closing_total": 25264,
+   "digest": "c914e57ff8726465",
+   "payable": 25264
+  },
+  "W0033": {
+   "closing_total": -128370,
+   "digest": "ce5e4d8d81c5ce61",
+   "payable": 0
+  },
+  "W0034": {
+   "closing_total": -704856,
+   "digest": "2495de5d6cc52ed9",
+   "payable": 0
+  },
+  "W0037": {
+   "closing_total": 11738,
+   "digest": "e8a5b49775e578b5",
+   "payable": 11738
+  },
+  "W0038": {
+   "closing_total": -276715,
+   "digest": "880477fbe4acf172",
+   "payable": 0
+  },
+  "W0039": {
+   "closing_total": 19989,
+   "digest": "9c907cf075ff3dfa",
+   "payable": 19989
+  },
+  "W0041": {
+   "closing_total": -711584,
+   "digest": "e269d115280857bb",
+   "payable": 0
+  },
+  "W0043": {
+   "closing_total": 11530,
+   "digest": "c22815c222f5ab7d",
+   "payable": 11530
+  },
+  "W0050": {
+   "closing_total": -720517,
+   "digest": "27b56e7122d1d194",
+   "payable": 0
+  },
+  "W0051": {
+   "closing_total": 10130,
+   "digest": "046f193331d67359",
+   "payable": 10130
+  },
+  "W0053": {
+   "closing_total": -688680,
+   "digest": "86c922db2789e00e",
+   "payable": 0
+  },
+  "W0054": {
+   "closing_total": -224588,
+   "digest": "e89bc57025d8db39",
+   "payable": 0
+  },
+  "W0055": {
+   "closing_total": 110015,
+   "digest": "21e5daf2b59c8aab",
+   "payable": 110015
+  },
+  "W0056": {
+   "closing_total": -103429,
+   "digest": "62840adf60e76a19",
+   "payable": 0
+  },
+  "W0057": {
+   "closing_total": -36840,
+   "digest": "0f2ca15843d33827",
+   "payable": 0
+  },
+  "W0059": {
+   "closing_total": -207993,
+   "digest": "102fe5f79ac69a6a",
+   "payable": 0
+  },
+  "W0060": {
+   "closing_total": 23037,
+   "digest": "cb2ea88187d92105",
+   "payable": 23037
+  },
+  "W0063": {
+   "closing_total": 37889,
+   "digest": "b19a8b22999be985",
+   "payable": 37889
+  },
+  "W0064": {
+   "closing_total": 27458,
+   "digest": "14849a121a272215",
+   "payable": 27458
+  },
+  "W0067": {
+   "closing_total": -251017,
+   "digest": "b782d322f88e6d50",
+   "payable": 0
+  },
+  "W0069": {
+   "closing_total": -274162,
+   "digest": "032583aa7c991d38",
+   "payable": 0
+  },
+  "W0070": {
+   "closing_total": -84142,
+   "digest": "f582550cbe5a3369",
+   "payable": 0
+  },
+  "W0072": {
+   "closing_total": -275442,
+   "digest": "e18dc64e8641d547",
+   "payable": 0
+  },
+  "W0075": {
+   "closing_total": -691271,
+   "digest": "463de5f855aa9ead",
+   "payable": 0
+  },
+  "W0076": {
+   "closing_total": 17796,
+   "digest": "0c6dbd51c27ba6ba",
+   "payable": 17796
+  },
+  "W0078": {
+   "closing_total": -119725,
+   "digest": "97a7931f1eb67e28",
+   "payable": 0
+  },
+  "W0079": {
+   "closing_total": -138644,
+   "digest": "4cadabd90417674e",
+   "payable": 0
+  },
+  "W0080": {
+   "closing_total": -111251,
+   "digest": "a96cc1ea12ddb2e7",
+   "payable": 0
+  },
+  "W0081": {
+   "closing_total": -257925,
+   "digest": "ea30f2c2bf87597c",
+   "payable": 0
+  },
+  "W0083": {
+   "closing_total": -134652,
+   "digest": "4a9c14c49fa6e7fe",
+   "payable": 0
+  },
+  "W0084": {
+   "closing_total": 7450,
+   "digest": "101dd9538545d5c5",
+   "payable": 7450
+  },
+  "W0085": {
+   "closing_total": 65961,
+   "digest": "d5ff82c9f0fac52a",
+   "payable": 65961
+  },
+  "W0088": {
+   "closing_total": 20270,
+   "digest": "311c5dc23da0a656",
+   "payable": 20270
+  },
+  "W0089": {
+   "closing_total": 17722,
+   "digest": "48adefe95906e118",
+   "payable": 17722
+  },
+  "W0090": {
+   "closing_total": 9724,
+   "digest": "357556186156f97b",
+   "payable": 9724
+  },
+  "W0091": {
+   "closing_total": -136293,
+   "digest": "230940419b9bb34c",
+   "payable": 0
+  },
+  "W0092": {
+   "closing_total": 47976,
+   "digest": "9df931c5d6df7102",
+   "payable": 47976
+  },
+  "W0093": {
+   "closing_total": 20027,
+   "digest": "dcde3890950a0166",
+   "payable": 20027
+  },
+  "W0095": {
+   "closing_total": -127623,
+   "digest": "4fa8f07eb7ffad9a",
+   "payable": 0
+  },
+  "W0098": {
+   "closing_total": -121377,
+   "digest": "4e89d8f1fc6edb87",
+   "payable": 0
+  },
+  "W0100": {
+   "closing_total": 9591,
+   "digest": "dd1d0760efdd61f4",
+   "payable": 9591
+  },
+  "W0105": {
+   "closing_total": 44186,
+   "digest": "fa27056269e7543e",
+   "payable": 44186
+  },
+  "W0106": {
+   "closing_total": 21300,
+   "digest": "0c23673ebae9045c",
+   "payable": 21300
+  },
+  "W0107": {
+   "closing_total": 17148,
+   "digest": "b189ec23d0dbbead",
+   "payable": 17148
+  },
+  "W0109": {
+   "closing_total": 27428,
+   "digest": "5eab34558378cf44",
+   "payable": 27428
+  },
+  "W0110": {
+   "closing_total": 21167,
+   "digest": "7c35416af99a6c83",
+   "payable": 21167
+  },
+  "W0112": {
+   "closing_total": -288177,
+   "digest": "c7090e7e0bac63d2",
+   "payable": 0
+  },
+  "W0113": {
+   "closing_total": 9511,
+   "digest": "6c309cd9ea40e995",
+   "payable": 9511
+  },
+  "W0114": {
+   "closing_total": -265330,
+   "digest": "b5528b49cdac7caa",
+   "payable": 0
+  },
+  "W0115": {
+   "closing_total": 21406,
+   "digest": "52e79c8883ff3682",
+   "payable": 21406
+  },
+  "W0116": {
+   "closing_total": -109070,
+   "digest": "9e9e4be5aebadd19",
+   "payable": 0
+  },
+  "W0118": {
+   "closing_total": -641858,
+   "digest": "7be713fa3c645873",
+   "payable": 0
+  },
+  "W0120": {
+   "closing_total": 24930,
+   "digest": "b27c07adc809ef7c",
+   "payable": 24930
+  },
+  "W0121": {
+   "closing_total": 237501,
+   "digest": "ae276b40e4a4e40b",
+   "payable": 237501
+  },
+  "W0122": {
+   "closing_total": 376569,
+   "digest": "e35feda600b65aba",
+   "payable": 376569
+  },
+  "W0123": {
+   "closing_total": 254462,
+   "digest": "3012b6c04cd9fda1",
+   "payable": 254462
+  },
+  "W0125": {
+   "closing_total": -16967,
+   "digest": "9ea36377bf6a9224",
+   "payable": 0
+  },
+  "W0128": {
+   "closing_total": 45252,
+   "digest": "8a3f2bea4ab24b9e",
+   "payable": 45252
+  },
+  "W0129": {
+   "closing_total": 48022,
+   "digest": "6c19558b8ffaeca2",
+   "payable": 48022
+  },
+  "W0130": {
+   "closing_total": 80388,
+   "digest": "93d8ff9dde3b94ea",
+   "payable": 80388
+  },
+  "W0131": {
+   "closing_total": -598862,
+   "digest": "5c65565ea3adab3e",
+   "payable": 0
+  },
+  "W0132": {
+   "closing_total": -465125,
+   "digest": "b38555c377e640b6",
+   "payable": 0
+  },
+  "W0133": {
+   "closing_total": -243964,
+   "digest": "c991ea9b6a744d66",
+   "payable": 0
+  },
+  "W0134": {
+   "closing_total": -209028,
+   "digest": "33b5f649bd2992e3",
+   "payable": 0
+  },
+  "W0135": {
+   "closing_total": -243708,
+   "digest": "3df11e463b9453f8",
+   "payable": 0
+  },
+  "W0137": {
+   "closing_total": -710305,
+   "digest": "dd78e254dac7886e",
+   "payable": 0
+  },
+  "W0138": {
+   "closing_total": -125947,
+   "digest": "0352eb064a9c67c9",
+   "payable": 0
+  },
+  "W0142": {
+   "closing_total": 10189,
+   "digest": "40ab30caf5004be7",
+   "payable": 10189
+  },
+  "W0143": {
+   "closing_total": -106845,
+   "digest": "472f9f97d5f14c96",
+   "payable": 0
+  },
+  "W0145": {
+   "closing_total": -144280,
+   "digest": "45142d10a40d2a38",
+   "payable": 0
+  },
+  "W0146": {
+   "closing_total": -246819,
+   "digest": "73b852a30f90d016",
+   "payable": 0
+  },
+  "W0147": {
+   "closing_total": -280647,
+   "digest": "99b0fe42d7389b03",
+   "payable": 0
+  },
+  "W0148": {
+   "closing_total": -276289,
+   "digest": "967e74a492272db3",
+   "payable": 0
+  },
+  "W0149": {
+   "closing_total": -261991,
+   "digest": "fa81eea821ffa98a",
+   "payable": 0
+  },
+  "W0150": {
+   "closing_total": -728678,
+   "digest": "e44a8b7b61b63531",
+   "payable": 0
+  },
+  "W0151": {
+   "closing_total": 9487,
+   "digest": "b02b5c5a1a7bc2bd",
+   "payable": 9487
+  },
+  "W0152": {
+   "closing_total": -697932,
+   "digest": "fd96adb821421ed0",
+   "payable": 0
+  },
+  "W0154": {
+   "closing_total": -742980,
+   "digest": "f6a8def0da2dce15",
+   "payable": 0
+  },
+  "W0155": {
+   "closing_total": -677631,
+   "digest": "64ae261e37d25b7f",
+   "payable": 0
+  },
+  "W0156": {
+   "closing_total": -109178,
+   "digest": "8029d40683ebaee2",
+   "payable": 0
+  },
+  "W0157": {
+   "closing_total": 13719,
+   "digest": "3d69e50d62e2bb5b",
+   "payable": 13719
+  },
+  "W0158": {
+   "closing_total": -240548,
+   "digest": "fe528bbcdef2210d",
+   "payable": 0
+  },
+  "W0159": {
+   "closing_total": -175279,
+   "digest": "126b3b57066edc24",
+   "payable": 0
+  },
+  "W0160": {
+   "closing_total": -53870,
+   "digest": "0680162b589e4cc5",
+   "payable": 0
+  },
+  "W0161": {
+   "closing_total": -717862,
+   "digest": "b83cb79bca3c247c",
+   "payable": 0
+  },
+  "W0162": {
+   "closing_total": -81351,
+   "digest": "9be1e24f5eee11b4",
+   "payable": 0
+  },
+  "W0163": {
+   "closing_total": 23913,
+   "digest": "5ee695e840642519",
+   "payable": 23913
+  },
+  "W0164": {
+   "closing_total": -271960,
+   "digest": "417eef52dffdf31d",
+   "payable": 0
+  },
+  "W0165": {
+   "closing_total": -124214,
+   "digest": "98191a149d6bd4e3",
+   "payable": 0
+  },
+  "W0166": {
+   "closing_total": 9971,
+   "digest": "d627423ee91a20d8",
+   "payable": 9971
+  },
+  "W0167": {
+   "closing_total": 39659,
+   "digest": "27b61df4e3c5b51d",
+   "payable": 39659
+  },
+  "W0169": {
+   "closing_total": -138779,
+   "digest": "26a60e07d5add44c",
+   "payable": 0
+  },
+  "W0170": {
+   "closing_total": -677525,
+   "digest": "ef1de02ddd251707",
+   "payable": 0
+  },
+  "W0171": {
+   "closing_total": -562144,
+   "digest": "f0b3809641737e5b",
+   "payable": 0
+  },
+  "W0172": {
+   "closing_total": -288168,
+   "digest": "32d734ab3c5c4c89",
+   "payable": 0
+  }
+ }
+}

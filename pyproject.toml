@@ -1,0 +1,36 @@
+[project]
+name = "royaltyledger"
+version = "1.0.0"
+description = "Royalty accounting for a made-up independent label and publisher: report ingest, matching, splits, recoupment, reserves and statements that tie out to the cent."
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "Nick Bitzis" }]
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.110",
+    "uvicorn>=0.29",
+]
+
+[project.scripts]
+royaltyledger = "royaltyledger.cli:main"
+
+[dependency-groups]
+dev = ["pytest>=8", "ruff>=0.6", "httpx>=0.27"]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/royaltyledger"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+filterwarnings = ["ignore:Using .httpx. with .starlette.testclient."]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP"]

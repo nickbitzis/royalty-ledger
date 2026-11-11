@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Royalty Ledger</title>
+<style>
+:root {
+  color-scheme: light;
+  --bg: #f6f7f9; --panel: #fcfcfb; --text: #0b0b0b; --muted: #52514e; --faint: #8a8984; --border: #dde2e9;
+  --grid: #e9ebee; --accent: #2a78d6; --s1: #2a78d6; --s2: #eb6834;
+  --good: #11804f; --good-soft: #e3f5ec; --bad: #b42318; --bad-soft: #fde8e6; --warn: #8a5a00; --warn-soft: #fff4dc;
+  --radius: 10px; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --bg: #111110; --panel: #1a1a19; --text: #f0efec; --muted: #c3c2b7; --faint: #8f8e86; --border: #2e2e2b;
+    --grid: #2a2a27; --accent: #3987e5; --s1: #3987e5; --s2: #d95926;
+    --good: #4ccb8f; --good-soft: #15302a; --bad: #ff8a7a; --bad-soft: #3b1d1b; --warn: #f3c46b; --warn-soft: #3a2e14;
+  }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111110; --panel: #1a1a19; --text: #f0efec; --muted: #c3c2b7; --faint: #8f8e86; --border: #2e2e2b;
+  --grid: #2a2a27; --accent: #3987e5; --s1: #3987e5; --s2: #d95926;
+  --good: #4ccb8f; --good-soft: #15302a; --bad: #ff8a7a; --bad-soft: #3b1d1b; --warn: #f3c46b; --warn-soft: #3a2e14;
+}
+* { box-sizing: border-box; }
+html, body { overflow-x: hidden; }
+body { margin: 0; background: var(--bg); color: var(--text); font-size: 14px; }
+header { padding: 18px 24px 4px; display: flex; flex-wrap: wrap; gap: 8px 20px; align-items: baseline; }
+h1 { font-size: 20px; margin: 0; }
+h2 { font-size: 13px; margin: 0 0 12px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: .04em; }
+h3 { font-size: 14px; margin: 16px 0 6px; }
+nav { display: flex; gap: 6px; flex-wrap: wrap; padding: 8px 24px; }
+nav a { text-decoration: none; color: var(--muted); border: 1px solid var(--border); border-radius: 999px; padding: 5px 12px; background: var(--panel); }
+nav a.on { color: var(--accent); border-color: var(--accent); font-weight: 600; }
+main { padding: 8px 24px 24px; display: grid; gap: 16px; grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.panel { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 16px; min-width: 0; }
+.s2 { grid-column: span 2; } .s3 { grid-column: span 3; } .s4 { grid-column: span 4; } .s6 { grid-column: span 6; }
+.kpis { display: flex; gap: 24px; flex-wrap: wrap; }
+.kpi .v { font-size: 20px; font-weight: 650; font-variant-numeric: tabular-nums; }
+.kpi .l { color: var(--muted); font-size: 12px; }
+.muted { color: var(--muted); } .small { font-size: 12px; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 12px; font-weight: 600; }
+.ok { background: var(--good-soft); color: var(--good); } .no { background: var(--bad-soft); color: var(--bad); }
+.wn { background: var(--warn-soft); color: var(--warn); }
+select, button { font: inherit; color: var(--text); background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 6px 10px; max-width: 100%; }
+button { cursor: pointer; } button:hover { border-color: var(--accent); }
+.row { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { text-align: left; padding: 5px 8px; border-top: 1px solid var(--border); white-space: nowrap; }
+th { color: var(--muted); font-weight: 600; border-top: 0; }
+td.wrap { white-space: normal; }
+.num { text-align: right; font-variant-numeric: tabular-nums; }
+.scroll { overflow-x: auto; max-width: 100%; }
+.tall { max-height: 520px; overflow-y: auto; }
+tr.click { cursor: pointer; } tr.click:hover td { background: var(--bg); }
+tr.tot td { font-weight: 650; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 12px; color: var(--muted); margin: 6px 0 8px; }
+.legend i { display: inline-block; width: 14px; height: 3px; margin-right: 5px; vertical-align: middle; }
+.chart svg { width: 100%; height: auto; display: block; }
+.hbar { height: 10px; background: var(--s1); border-radius: 3px; }
+.notice { background: var(--bg); border: 1px dashed var(--border); border-radius: 8px; padding: 10px 12px; font-size: 13px; line-height: 1.5; }
+.hide { display: none !important; }
+@media (max-width: 900px) {
+  header, nav { padding-left: 16px; padding-right: 16px; }
+  main { grid-template-columns: minmax(0, 1fr); padding: 8px 16px 16px; }
+  .s2, .s3, .s4, .s6 { grid-column: auto; }
+}
+@media print {
+  nav, header .kpis, .noprint, #audit { display: none !important; }
+  body { background: #fff; color: #000; }
+  .panel { border: 0; padding: 0; }
+  main { display: block; padding: 0; }
+  .scroll, .tall { overflow: visible; max-height: none; }
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Royalty Ledger</h1>
+  <span class="muted small">Lantern Hill Records and Lantern Hill Music. Synthetic data, illustrative terms.</span>
+</header>
+<nav class="noprint">
+  <a href="#statement" data-tab="statement">Statement</a>
+  <a href="#recoup" data-tab="recoup">Recoupment</a>
+  <a href="#review" data-tab="review">Matching review</a>
+  <a href="#analytics" data-tab="analytics">Analytics</a>
+</nav>
+
+<main id="tab-statement">
+  <section class="panel s6 noprint"><div class="kpis" id="kpis"></div></section>
+  <section class="panel s4">
+    <div class="row noprint" style="margin-bottom:12px">
+      <select id="ptype"><option value="artist">Artists</option><option value="producer">Producers</option>
+        <option value="writer">Songwriters</option><option value="publisher">Co-publishers</option></select>
+      <select id="payee"></select>
+      <select id="period"></select>
+      <button id="print">Print</button>
+      <button id="csv">CSV</button>
+      <button id="html">HTML</button>
+    </div>
+    <div id="statement"></div>
+  </section>
+  <section class="panel s2" id="audit">
+    <h2>Audit trail</h2>
+    <div id="auditbody" class="muted small">Click any earnings line to trace it back to the report rows it came from.</div>
+  </section>
+</main>
+
+<main id="tab-recoup" class="hide">
+  <section class="panel s4">
+    <div class="row" style="margin-bottom:8px"><select id="racct"></select></div>
+    <h2 id="rtitle">Recoupment</h2>
+    <div class="legend"><span><i style="background:var(--s1)"></i>Recouped to date</span>
+      <span><i style="background:var(--s2)"></i>Advances and recoupable costs charged</span></div>
+    <div class="chart" id="rchart"></div>
+    <div id="rinfo" class="small" style="margin-top:8px"></div>
+  </section>
+  <section class="panel s2">
+    <h2>Charges</h2>
+    <div class="scroll" id="rcharges"></div>
+  </section>
+  <section class="panel s6">
+    <h2>All artist accounts</h2>
+    <div class="scroll tall" id="rall"></div>
+  </section>
+</main>
+
+<main id="tab-review" class="hide">
+  <section class="panel s6"><div class="kpis" id="mkpis"></div></section>
+  <section class="panel s6">
+    <h2>Review queue</h2>
+    <p class="muted small" style="margin-top:-6px">Each row is one set of report metadata. A decision applies to every line with that metadata, in every month and store. Money on these lines sits in suspense until it is resolved.</p>
+    <div class="scroll" id="queue"></div>
+  </section>
+</main>
+
+<main id="tab-analytics" class="hide">
+  <section class="panel s3"><h2>Top tracks by gross receipts</h2><div class="scroll" id="atracks"></div></section>
+  <section class="panel s3"><h2>Gross receipts by territory</h2><div class="scroll" id="aterr"></div>
+    <h3>By source</h3><div class="scroll" id="asrc"></div></section>
+  <section class="panel s3"><h2>Per-stream rates, USD per 1,000 streams</h2><div class="scroll" id="arates"></div></section>
+  <section class="panel s3"><h2>Projected recoupment at the current run rate</h2><div class="scroll tall" id="aproj"></div></section>
+</main>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({"&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;"}[c]));
+const usd = (c) => (c < 0 ? "-" : "") + "$" + (Math.abs(c) / 100).toLocaleString("en-US", {minimumFractionDigits: 2, maximumFractionDigits: 2});
+const usdM = (m, d = 2) => "$" + (m / 1e6).toLocaleString("en-US", {minimumFractionDigits: d, maximumFractionDigits: d});
+const api = async (path, opts) => { const r = await fetch(path, opts); if (!r.ok) throw new Error(await r.text()); return r.json(); };
+const params = new URLSearchParams(location.search);
+let periods = [], current = null;
+
+function tab() {
+  const t = (location.hash || "#statement").slice(1);
+  for (const m of document.querySelectorAll("main")) m.classList.toggle("hide", m.id !== "tab-" + t);
+  for (const a of document.querySelectorAll("nav a")) a.classList.toggle("on", a.dataset.tab === t);
+  if (t === "recoup") loadRecoup();
+  if (t === "review") loadReview();
+  if (t === "analytics") loadAnalytics();
+}
+
+async function init() {
+  const s = await api("/api/summary");
+  periods = s.periods.map((p) => p.period);
+  const ties = s.periods.every((p) => p.ties_out);
+  const last = s.periods[s.periods.length - 1];
+  $("kpis").innerHTML = [
+    ["Report lines", s.lines.toLocaleString()], ["Match rate", (s.matching.match_rate * 100).toFixed(2) + "%"],
+    ["Review queue", s.review_queue], ["Received " + last.period, usd(last.received_cents)],
+    ["Paid to rights holders", usd(last.by_kind.payees || 0)],
+    ["Tie-out", `<span class="badge ${ties ? "ok" : "no"}">${ties ? "0 cents difference, all periods" : "difference"}</span>`],
+  ].map(([l, v]) => `<div class="kpi"><div class="v">${v}</div><div class="l">${esc(l)}</div></div>`).join("");
+  $("period").innerHTML = periods.map((p) => `<option>${p}</option>`).join("");
+  $("period").value = params.get("period") || periods[periods.length - 1];
+  if (params.get("type")) $("ptype").value = params.get("type");
+  await loadPayees(params.get("payee"));
+}
+
+async function loadPayees(pick) {
+  const {payees} = await api("/api/payees?type=" + $("ptype").value);
+  $("payee").innerHTML = payees.map((p) => `<option value="${esc(p.id)}">${esc(p.name)} (${esc(p.id)})</option>`).join("");
+  if (pick && payees.some((p) => p.id === pick)) $("payee").value = pick;
+  await loadStatement();
+}
+
+async function loadStatement() {
+  const st = await api(`/api/statements/${encodeURIComponent($("payee").value)}?period=${$("period").value}`);
+  current = st;
+  let h = `<h3 style="margin-top:0">${esc(st.payee_name)} <span class="muted small">${esc(st.payee_id)}, ${esc(st.payee_type)}, period ${esc(st.period)}</span></h3>`;
+  for (const a of st.accounts) {
+    h += `<h3>${esc(a.label)} <span class="muted small">${esc(a.account_id)}</span> ${a.closing >= 0 ? '<span class="badge ok">recouped</span>' : '<span class="badge wn">unrecouped ' + usd(-a.closing) + "</span>"}</h3>`;
+    h += `<div class="scroll"><table><tr><th>Line</th><th>Territory</th><th class="num">Amount</th></tr>`;
+    h += `<tr><td>Opening balance</td><td></td><td class="num">${usd(a.opening)}</td></tr>`;
+    for (const e of a.earnings) h += `<tr class="click" data-line="${esc(e.line_id)}"><td>${esc(e.source)}</td><td>${esc(e.territory)}</td><td class="num">${usd(e.cents)}</td></tr>`;
+    h += `<tr class="tot"><td>Earnings this period</td><td></td><td class="num">${usd(a.earnings_total)}</td></tr>`;
+    for (const c of a.charges) h += `<tr><td class="wrap">${esc(c.desc)} (${usd(c.amount_cents)}, recoupable ${usd(c.recoupable_cents)})</td><td></td><td class="num">${usd(-c.recoupable_cents)}</td></tr>`;
+    if (a.reserve_held) h += `<tr><td>Reserve held against physical returns</td><td></td><td class="num">${usd(-a.reserve_held)}</td></tr>`;
+    if (a.reserve_released) h += `<tr><td>Reserve released</td><td></td><td class="num">${usd(a.reserve_released)}</td></tr>`;
+    if (a.producer_held) h += `<tr><td class="wrap">Held until the artist recoups recording costs</td><td></td><td class="num">${usd(-a.producer_held)}</td></tr>`;
+    if (a.producer_released) h += `<tr><td class="wrap">Released, retroactive to record one</td><td></td><td class="num">${usd(a.producer_released)}</td></tr>`;
+    if (a.reserve_outstanding) h += `<tr><td class="wrap muted">Reserves still held, released in later periods: ${usd(a.reserve_outstanding)}</td><td></td><td></td></tr>`;
+    h += `<tr class="tot"><td>Closing balance</td><td></td><td class="num">${usd(a.closing)}</td></tr>`;
+    h += `<tr><td>Paid this period</td><td></td><td class="num">${usd(a.paid)}</td></tr></table></div>`;
+  }
+  const note = st.below_minimum ? ` Below the ${usd(st.min_payment)} minimum payment, so the balance carries forward.` : "";
+  h += `<p class="notice"><b>Payable ${usd(st.payable)}</b>.${note} Statement digest <code>${esc(st.digest)}</code>.</p>`;
+  $("statement").innerHTML = h;
+  for (const tr of document.querySelectorAll("tr[data-line]")) tr.onclick = () => loadAudit(tr.dataset.line);
+}
+
+async function loadAudit(lineId) {
+  const a = await api("/api/audit?line=" + encodeURIComponent(lineId));
+  let h = `<p class="small"><b>${esc(a.source)}, ${esc(a.territory)}</b>: ${usd(a.cents)} (${usdM(a.micros, 6)} before rounding to cents), from ${a.contributions.length} report rows. Shares sum to ${usdM(a.contributions_micros_total, 6)}.</p>`;
+  h += `<div class="scroll tall"><table><tr><th>File, line</th><th>Month</th><th class="num">Line USD</th><th class="num">This share</th><th>Match</th></tr>`;
+  for (const c of a.contributions.slice(0, 200)) {
+    h += `<tr title="${esc(JSON.stringify(c.raw))}"><td>${esc(c.file)}:${c.row}</td><td>${esc(c.month)}</td><td class="num">${usdM(c.line_usd_micros, 4)}</td><td class="num">${usdM(c.micros, 6)}</td><td>${esc(c.match)}</td></tr>`;
+  }
+  h += "</table></div>";
+  if (a.contributions.length > 200) h += `<p class="muted small">First 200 of ${a.contributions.length} rows shown.</p>`;
+  const c0 = a.contributions[0];
+  if (c0) h += `<h3>First source row</h3><div class="scroll"><table>${Object.entries(c0.raw).map(([k, v]) => `<tr><td class="muted">${esc(k)}</td><td>${esc(v)}</td></tr>`).join("")}</table></div>`;
+  $("auditbody").innerHTML = h;
+}
+
+let recoupRows = null;
+async function loadRecoup() {
+  if (!recoupRows) {
+    recoupRows = (await api("/api/recoupment")).accounts;
+    $("racct").innerHTML = recoupRows.map((r) => `<option value="${esc(r.account_id)}">${esc(r.artist)}: ${esc(r.label)}</option>`).join("");
+    const pick = params.get("account") || (recoupRows.find((r) => r.series.some((p) => p.charged_to_date !== r.series[0].charged_to_date)) || recoupRows[0]).account_id;
+    $("racct").value = pick;
+    $("rall").innerHTML = `<table><tr><th>Artist</th><th>Account</th><th>Deal</th><th class="num">Charged to date</th><th class="num">Balance</th><th class="num">Run rate per quarter</th><th>Projected recoup</th></tr>` +
+      recoupRows.map((r) => `<tr class="click" data-acct="${esc(r.account_id)}"><td>${esc(r.artist)}</td><td>${esc(r.label)}</td><td>${r.deal === "royalty" ? "Royalty rate" : "50/50 net profit"}</td><td class="num">${usd(r.charged_to_date)}</td><td class="num">${usd(r.balance)}</td><td class="num">${usd(r.run_rate_per_period)}</td><td>${r.recouped ? '<span class="badge ok">recouped</span>' : r.projection ? (r.projection.beyond_10_years ? "more than 10 years" : esc(r.projection.period)) : '<span class="badge no">no run rate</span>'}</td></tr>`).join("") + "</table>";
+    for (const tr of document.querySelectorAll("tr[data-acct]")) tr.onclick = () => { $("racct").value = tr.dataset.acct; drawRecoup(); scrollTo(0, 0); };
+  }
+  drawRecoup();
+}
+
+function drawRecoup() {
+  const r = recoupRows.find((x) => x.account_id === $("racct").value);
+  $("rtitle").textContent = `${r.artist}: ${r.label}`;
+  const pts = r.series, W = 640, H = 260, L = 70, R = 36, T = 12, B = 30;
+  const top = Math.max(100, ...pts.map((p) => Math.max(p.charged_to_date, p.recouped_to_date)));
+  const mag = Math.pow(10, Math.floor(Math.log10(top / 4)));
+  const stepV = [1, 2, 2.5, 5, 10].map((m) => m * mag).find((v) => v * 4 >= top);
+  const max = stepV * 4;
+  const x = (i) => L + (i * (W - L - R)) / Math.max(1, pts.length - 1);
+  const y = (v) => T + (H - T - B) * (1 - v / max);
+  let svg = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Recouped to date against charges">`;
+  for (let k = 0; k <= 4; k++) {
+    const v = (max / 4) * k;
+    svg += `<line x1="${L}" x2="${W - R}" y1="${y(v)}" y2="${y(v)}" stroke="var(--grid)"/><text x="${L - 6}" y="${y(v) + 4}" text-anchor="end" font-size="11" fill="var(--muted)">${usd(v).replace(".00", "")}</text>`;
+  }
+  pts.forEach((p, i) => { svg += `<text x="${x(i)}" y="${H - 10}" text-anchor="middle" font-size="11" fill="var(--muted)">${p.period === "start" ? "Opening" : p.period}</text>`; });
+  let step = "";
+  pts.forEach((p, i) => { step += (i ? ` L${x(i)},${y(pts[i - 1].charged_to_date)} L${x(i)},${y(p.charged_to_date)}` : `M${x(i)},${y(p.charged_to_date)}`); });
+  svg += `<path d="${step}" fill="none" stroke="var(--s2)" stroke-width="2"/>`;
+  svg += `<path d="${pts.map((p, i) => (i ? "L" : "M") + x(i) + "," + y(p.recouped_to_date)).join(" ")}" fill="none" stroke="var(--s1)" stroke-width="2.5"/>`;
+  pts.forEach((p, i) => { svg += `<circle cx="${x(i)}" cy="${y(p.recouped_to_date)}" r="3.5" fill="var(--s1)"><title>${p.period}: recouped ${usd(p.recouped_to_date)} of ${usd(p.charged_to_date)}</title></circle>`; });
+  $("rchart").innerHTML = svg + "</svg>";
+  const proj = r.recouped ? "Recouped. Royalties are payable above the minimum payment." : r.projection ? `Unrecouped by ${usd(-r.balance)}. At the current run rate of ${usd(r.run_rate_per_period)} per quarter, ${r.projection.beyond_10_years ? "it would take more than 10 years to recoup" : `projected to recoup in ${r.projection.period} (${r.projection.periods} quarters)`}.` : "Unrecouped and no recent earnings, so no projection.";
+  $("rinfo").innerHTML = `<p>${proj}</p><p class="muted">${r.deal === "royalty" ? "Royalty rate deal" : "50/50 net profit deal: costs come off the top, so the artist account carries half of them"}. ${r.cross_collat ? "Cross-collateralized across albums." : "Not cross-collateralized: each album recoups on its own."}</p>`;
+  $("rcharges").innerHTML = `<table><tr><th>Charge</th><th>Period</th><th class="num">Recoupable</th></tr>${r.charges.map((c) => `<tr><td>${esc(c.desc)}</td><td>${esc(c.period)}</td><td class="num">${usd(c.recoupable_cents)}</td></tr>`).join("")}</table>`;
+}
+
+async function loadReview() {
+  const {items, evaluation: ev} = await api("/api/review");
+  $("mkpis").innerHTML = [
+    ["Lines scored", ev.lines.toLocaleString()], ["Matched", (ev.match_rate * 100).toFixed(2) + "%"],
+    ["Precision of matches", (ev.precision * 100).toFixed(3) + "%"], ["Lines in review", ev.review_lines.toLocaleString()],
+    ["Top candidate correct", (ev.review_top_candidate_correct * 100).toFixed(1) + "%"], ["Unmatched (not in catalog)", `${ev.unmatched_lines} (${ev.unmatched_truly_not_ours})`],
+  ].map(([l, v]) => `<div class="kpi"><div class="v">${v}</div><div class="l">${esc(l)}</div></div>`).join("");
+  if (!items.length) { $("queue").innerHTML = '<p class="muted">The queue is empty.</p>'; return; }
+  let h = `<table><tr><th>Reported as</th><th>Why</th><th>Stores</th><th class="num">Lines</th><th class="num">Amount</th><th>Candidates</th><th></th></tr>`;
+  for (const q of items) {
+    const ident = q.isrc || q.catalog_no || q.iswc || "no identifier";
+    h += `<tr><td class="wrap"><b>${esc(q.title)}</b><br><span class="muted small">${esc(q.artist)}, ${esc(ident)}</span></td><td class="wrap small">${q.method === "isrc_conflict" ? "ISRC found, title disagrees" : "Fuzzy score below auto-accept"}</td><td>${esc(q.stores.join(", "))}</td><td class="num">${q.lines}</td><td class="num">${usdM(q.micros)}</td><td>`;
+    h += q.candidates.map((c) => `<div class="small"><button data-key="${q.key_id}" data-target="${esc(c.target)}">Accept</button> ${esc(c.title)}, ${esc(c.artist)} <span class="muted">${esc(c.id)}, score ${c.score}</span></div>`).join("");
+    h += `</td><td><button data-key="${q.key_id}" data-reject="1">Reject</button></td></tr>`;
+  }
+  $("queue").innerHTML = h + "</table>";
+  for (const b of document.querySelectorAll("#queue button")) b.onclick = async () => {
+    b.disabled = true; b.textContent = "Recomputing";
+    await api("/api/review/" + b.dataset.key, {method: "POST", headers: {"content-type": "application/json"},
+      body: JSON.stringify(b.dataset.reject ? {action: "reject"} : {action: "accept", target: b.dataset.target})});
+    recoupRows = null; loadReview(); init();
+  };
+}
+
+async function loadAnalytics() {
+  const a = await api("/api/analytics?top=15");
+  $("atracks").innerHTML = `<table><tr><th>Track</th><th>Artist</th><th class="num">Streams</th><th class="num">Gross</th></tr>${a.top_tracks.map((t) => `<tr><td>${esc(t.title)}</td><td>${esc(t.artist)}</td><td class="num">${t.streams.toLocaleString()}</td><td class="num">${usdM(t.gross_micros)}</td></tr>`).join("")}</table>`;
+  const tmax = Math.max(...a.territories.map((t) => t.gross_micros));
+  $("aterr").innerHTML = `<table>${a.territories.map((t) => `<tr><td>${esc(t.territory)}</td><td style="width:60%"><div class="hbar" style="width:${(100 * t.gross_micros / tmax).toFixed(1)}%"></div></td><td class="num">${usdM(t.gross_micros, 0)}</td></tr>`).join("")}</table>`;
+  $("asrc").innerHTML = `<table>${a.sources.map((t) => `<tr><td>${esc(t.source)}</td><td class="num">${usdM(t.gross_micros, 0)}</td></tr>`).join("")}</table>`;
+  const stores = [...new Set(a.per_stream.map((r) => r.store))];
+  const terrs = [...new Set(a.per_stream.map((r) => r.territory))];
+  const rate = Object.fromEntries(a.per_stream.map((r) => [r.store + "|" + r.territory, r.usd_per_1000]));
+  $("arates").innerHTML = `<table><tr><th>Territory</th>${stores.map((s) => `<th class="num">${esc(s)}</th>`).join("")}</tr>${terrs.map((t) => `<tr><td>${esc(t)}</td>${stores.map((s) => `<td class="num">${rate[s + "|" + t] != null ? "$" + rate[s + "|" + t].toFixed(2) : ""}</td>`).join("")}</tr>`).join("")}</table>`;
+  const proj = a.recoup_projection.filter((r) => !r.recouped).sort((x, y) => (x.projection ? x.projection.periods : 1e9) - (y.projection ? y.projection.periods : 1e9));
+  $("aproj").innerHTML = `<table><tr><th>Artist</th><th>Account</th><th class="num">Unrecouped</th><th>Projected</th></tr>${proj.map((r) => `<tr><td>${esc(r.artist)}</td><td>${esc(r.label)}</td><td class="num">${usd(-r.balance)}</td><td>${r.projection ? (r.projection.beyond_10_years ? "more than 10 years" : esc(r.projection.period)) : "no run rate"}</td></tr>`).join("")}</table>`;
+}
+
+$("ptype").onchange = () => loadPayees();
+$("payee").onchange = loadStatement;
+$("period").onchange = loadStatement;
+$("racct").onchange = drawRecoup;
+$("print").onclick = () => window.print();
+$("csv").onclick = () => { location.href = `/api/statements/${encodeURIComponent($("payee").value)}?period=${$("period").value}&format=csv`; };
+$("html").onclick = () => { window.open(`/api/statements/${encodeURIComponent($("payee").value)}?period=${$("period").value}&format=html`); };
+window.addEventListener("hashchange", tab);
+init().then(tab).catch((e) => { $("statement").innerHTML = `<p class="no">${esc(e.message)}</p>`; });
+</script>
+</body>
+</html>
